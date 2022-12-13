@@ -108,3 +108,13 @@ prev_button.addEventListener('click', prev);
 // 1 - creare un intervallo che esegui la funzione 'next' ogni 5 secondi
 
 let autoplay = setInterval(next, 5000);
+
+// 2 - creare e fermare l'intervallo della funzione 'next' al click dei pulsanti
+
+document.getElementById('play').addEventListener('click', function() {
+    autoplay = setInterval(next, 5000);
+})
+
+document.getElementById('pause').addEventListener('click', function() {
+    clearInterval(autoplay);
+})
