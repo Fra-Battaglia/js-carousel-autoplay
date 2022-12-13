@@ -35,10 +35,9 @@ const circles = document.getElementsByClassName('circle');
 
 circles[itemActive].classList.add('active');
 
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+//Funzioni - Precedente, Successivo
 
-next.addEventListener('click', function() {
+function next(){
     //verifico l'elemento attivo (itemActive)
     if (itemActive < items.length - 1) {
         //rimuovo la class active al precendente elemento dell'array items e dell'array circles
@@ -52,7 +51,7 @@ next.addEventListener('click', function() {
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
     }
-
+    
     //ciclo infinito del carosello per il tasto next
     else {
          //rimuovo la class active al precendente elemento dell'array items e dell'array circles
@@ -66,10 +65,9 @@ next.addEventListener('click', function() {
          items[itemActive].classList.add('active');
          circles[itemActive].classList.add('active');
     }
-    
-});
+}
 
-prev.addEventListener('click', function() {
+function prev (){
     //verifico l'elemento attivo (itemActive)
     if (itemActive > 0) {
         //rimuovo la class active al precendente elemento dell'array items e dell'array circles
@@ -83,7 +81,7 @@ prev.addEventListener('click', function() {
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
     }
-
+    
     //ciclo infinito del carosello per il tasto prev
     else {
         //rimuovo la class active al precendente elemento dell'array items e dell'array circles
@@ -97,4 +95,12 @@ prev.addEventListener('click', function() {
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
     }
-});
+}
+
+const prev_button = document.querySelector('.prev');
+const next_button = document.querySelector('.next');
+
+
+next_button.addEventListener('click', next);
+
+prev_button.addEventListener('click', prev);
